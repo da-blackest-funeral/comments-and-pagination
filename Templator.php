@@ -45,30 +45,6 @@ class Templator
             self::$commentsPerPage
         );
     }
-
-    /**
-     * Метод, формирующий ссылку на следующую страницу
-     * @param int $maxPage
-     */
-    /* public static function linkToNextPage(int $maxPage): void
-    {
-        self::$page++;
-        // ссылка на предыдущую страницу
-        if (self::$page > 2) { ?>
-          <a class="btn" style="background-color: chocolate; color: azure"
-             href='?page=<?= self::$page - 2; ?>'><?= self::$page - 2; ?> страница</a>
-        <?php }
-        // ссылка на следующую страницу
-        if (self::$page < $maxPage) { ?>
-          <a class="btn" style="background-color: chocolate; color: azure"
-             href='?page=<?= self::$page; ?>'><?= self::$page; ?> страница</a>
-        <?php } elseif (self::$page == $maxPage) { // последняя
-            echo '<br>Это последняя страница';
-        } elseif (self::$page > $maxPage) {
-            self::$page = $maxPage;
-        }
-    } */
-
     // TODO сделать запрос
     /**
      * Метод, показывающий все комментарии
@@ -106,6 +82,5 @@ class Templator
         foreach ($paginated as $comment) {
             static::showComment($comment);
         }
-        // static::linkToNextPage($maxPage, $paginated);
     }
 }

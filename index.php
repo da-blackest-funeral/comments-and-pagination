@@ -1,3 +1,7 @@
+<?php
+  require_once __DIR__ . '/CommentController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -42,5 +46,3 @@
 </div>
 </body>
 </html>
-
-<!-- <?= $_GET['page'] + 1; ?> -->
