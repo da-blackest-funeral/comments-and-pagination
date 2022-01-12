@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-class DB extends PDO
+class CommentsModel extends PDO
 {
     /**
      * @param string $comment
@@ -24,7 +24,7 @@ class DB extends PDO
         return $res->fetchColumn();
     }
 
-    public function paginated(int $perPage, int $page): bool|array {
+    public function paginate(int $perPage, int $page): bool|array {
         $offset = $perPage * ($page - 1);
         $query = "select * from comments limit $perPage offset $offset";
         $res = $this->query($query);

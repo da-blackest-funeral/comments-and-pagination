@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f88893fe-a8f2-42ca-98da-b7cc96fd07bf" name="Changes" comment="code cleanup and refactoring">
+    <list default="true" id="f88893fe-a8f2-42ca-98da-b7cc96fd07bf" name="Changes" comment="huge refactoring and fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templator.php" beforeDir="false" afterPath="$PROJECT_DIR$/Templator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database/CommentsModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templator.php" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Templator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/bootstrap/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -42,6 +62,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -51,9 +72,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\data\htdocs\htdocs\Exercices\Database" />
-      <recent name="D:\data\htdocs\htdocs\Exercices\Templates\Components\css" />
-      <recent name="D:\data\htdocs\htdocs\Exercices\Templates\Components\js" />
+      <recent name="D:\web\projects\Exercices\Services" />
+      <recent name="D:\web\projects\Exercices\Controllers" />
+      <recent name="D:\web\projects\Exercices\Templates" />
+      <recent name="D:\web\projects\Exercices\Templates\js" />
+      <recent name="D:\web\projects\Exercices\Database" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -96,7 +119,8 @@
       <workItem from="1641935238416" duration="22000" />
       <workItem from="1641984776151" duration="851000" />
       <workItem from="1641985663214" duration="1095000" />
-      <workItem from="1641987010175" duration="5257000" />
+      <workItem from="1641987010175" duration="5584000" />
+      <workItem from="1642022416392" duration="1676000" />
     </task>
     <task id="LOCAL-00001" summary="first step of refactoring">
       <created>1641986730327</created>
@@ -112,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641988457726</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="huge refactoring and fix">
+      <created>1641992552920</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641992552920</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +164,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first step of refactoring" />
     <MESSAGE value="code cleanup and refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="code cleanup and refactoring" />
+    <MESSAGE value="huge refactoring and fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="huge refactoring and fix" />
   </component>
 </project>

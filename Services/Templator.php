@@ -6,26 +6,26 @@ class Templator
     /**
      * @var int
      */
-    private int $commentsPerPage = 2;
+    private int $commentsPerPage = 4;
     private int $page = 1;
-    private DB $db;
+    private CommentsModel $db;
 
-    public function __construct(DB $db) {
+    public function __construct(CommentsModel $db) {
       $this->db = $db;
     }
 
     // TODO разбить Templator и Paginator на два класса
 
     /**
-     * @param array $commentData
+     * @param array $comment
      */
-    private static function showComment(array $commentData): void { ?>
+    private static function showComment(array $comment): void { ?>
       <div class="note">
         <p>
-          <span class="date"><?= $commentData['updated_at'] ?></span>
+          <span class="date"><?= $comment['updated_at'] ?></span>
         </p>
         <p>
-            <?= $commentData['message']; ?>
+            <?= $comment['message']; ?>
         </p>
       </div>
     <?php }
@@ -51,14 +51,12 @@ class Templator
     /**
      * Метод, показывающий все комментарии
      */
-    public function showAll(): void {
-
+    public function showAll() {
         $count = $this->db->count();
         $maxPage = (int) ceil($count / $this->commentsPerPage);
-        var_dump($maxPage);
 
         $this->checkPageIsCorrect($maxPage);
-        $paginated = $this->db->paginated($this->commentsPerPage, $this->page);
+        $paginated = $this->db->paginate($this->commentsPerPage, $this->page);
 
         foreach ($paginated as $comment) {
             static::showComment($comment);

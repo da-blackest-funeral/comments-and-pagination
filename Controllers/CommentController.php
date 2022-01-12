@@ -1,14 +1,14 @@
 <?php
-require_once __DIR__ . '/DB.php';
-require_once __DIR__ . '/Templator.php';
+require_once __DIR__ . '/../Database/CommentsModel.php';
+require_once __DIR__ . '/../Services/Templator.php';
 
 class CommentController
 {
-    public DB $db;
+    public CommentsModel $db;
     public Templator $templator;
 
     public function __construct() {
-        $this->db = new DB('mysql:dbname=exercices;host=localhost', 'homestead', 'secret');
+        $this->db = new CommentsModel('mysql:dbname=exercices;host=localhost', 'homestead', 'secret');
         $this->templator = new Templator($this->db);
     }
 
