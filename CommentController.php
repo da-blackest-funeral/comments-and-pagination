@@ -4,10 +4,12 @@ require_once __DIR__ . '/Templator.php';
 
 class CommentController
 {
-    protected DB $db;
+    public DB $db;
+    public Templator $templator;
 
     public function __construct() {
         $this->db = new DB('mysql:dbname=exercices;host=localhost', 'homestead', 'secret');
+        $this->templator = new Templator($this->db);
     }
 
     public function haveComment() : bool {
@@ -19,7 +21,6 @@ class CommentController
     }
 
     public function all() {
-        $allComments = $this->db->getAllComments();
-        Templator::showAll($allComments);
+        $this->templator->showAll();
     }
 }

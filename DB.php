@@ -17,15 +17,29 @@ class DB extends PDO
         ]);
     }
 
+    public function count() {
+        $query = 'select count(*) from comments';
+        $res = $this->query($query);
+
+        return $res->fetchColumn();
+    }
+
+    public function paginated(int $perPage, int $page): bool|array {
+        $offset = $perPage * ($page - 1);
+        $query = "select * from comments limit $perPage offset $offset";
+        $res = $this->query($query);
+
+        return $res->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /**
      * Возвращает ассоциативный массив комментариев
      * @return array
      */
-    public function getAllComments() : array {
+    public function getAll() : array {
         $query = 'select * from comments';
-        $sth = $this->prepare($query);
-        $sth->execute();
+        $res = $this->query($query);
 
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $res->fetchAll(PDO::FETCH_ASSOC);
     }
 }

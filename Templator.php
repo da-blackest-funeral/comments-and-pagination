@@ -6,8 +6,13 @@ class Templator
     /**
      * @var int
      */
-    private static int $commentsPerPage = 3;
-    private static int $page = 1;
+    private int $commentsPerPage = 2;
+    private int $page = 1;
+    private DB $db;
+
+    public function __construct(DB $db) {
+      $this->db = $db;
+    }
 
     // TODO разбить Templator и Paginator на два класса
 
@@ -31,59 +36,30 @@ class Templator
       </div>
     <?php }
 
-    /**
-     * Метод, возвращающий записи только для текущей страницы
-     * @param array $allComments
-     * @return array
-     */
-    private static function paginate(array $allComments): array {
+    private function checkPageIsCorrect(int $maxPage) {
         if (!isset($_GET['page']) || (int)$_GET['page'] < 1) {
-            self::$page = 1;
+            $this->page = 1;
             header("location:http://192.168.56.10/?page=1");
+        } elseif ((int)$_GET['page'] > $maxPage) {
+            $this->page = $maxPage;
+            header("location:http://192.168.56.10/?page=$this->page");
         } else {
-            self::$page = (int)$_GET['page'];
+            $this->page = (int)$_GET['page'];
         }
-
-        return array_slice(
-            $allComments,
-            (self::$page - 1) * self::$commentsPerPage,
-            self::$commentsPerPage
-        );
     }
-    // TODO сделать запрос
 
     /**
      * Метод, показывающий все комментарии
-     * @param array $allCComments
      */
-    public static function showAll(array $allCComments): void {
-        /*
-         * округление происходит таким образом,
-         * что если количество записей кратно
-         * количеству записей на страницу,
-         * то $maxPage больше чем должна быть, из-за чего
-         * создается пустая страница, которой не должно быть
-         */
-        $maxPage = (int)round(count($allCComments) / static::$commentsPerPage) + 2;
-        /*
-         * Поэтому если возникла такая ситуация, для корректности
-         * необходимо уменьшить $maxPage на единицу
-        */
-        if (count($allCComments) % self::$commentsPerPage == 0
-            || count($allCComments) % self::$commentsPerPage == 2) {
-            $maxPage--;
-        }
+    public function showAll(): void {
 
-        $paginated = static::paginate($allCComments);
+        $count = $this->db->count();
+        $maxPage = (int) ceil($count / $this->commentsPerPage);
+        var_dump($maxPage);
 
-        /*
-         * Если ввели в GET параметр несуществующее значение,
-         * то вовзвращаем на последнюю страницу
-        */
-        if (empty($paginated) && count($allCComments) > 0) {
-            self::$page = $maxPage;
-            header("location:http://192.168.56.10/?page=" . self::$page - 1);
-        }
+        $this->checkPageIsCorrect($maxPage);
+        $paginated = $this->db->paginated($this->commentsPerPage, $this->page);
+
         foreach ($paginated as $comment) {
             static::showComment($comment);
         }
