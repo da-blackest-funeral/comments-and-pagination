@@ -1,5 +1,11 @@
 <?php
   require_once __DIR__ . '/CommentController.php';
+  require_once __DIR__ . '/Templator.php';
+
+  $commentsController = new CommentController();
+  if ($commentsController->haveComment()) {
+    $success = $commentsController->make();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -14,16 +20,14 @@
 <div id="wrapper">
   <h1>Гостевая книга</h1>
 
-  <button class="show" id="<?= $_GET['page'] + 1; ?>"> Показать следующие записи</button>
+  <button class="show" id="<?= isset($_GET['page']) ? $_GET['page'] + 1 : '1'; ?>"> Показать следующие записи</button>
 
-    <?php if (isset($_POST['name'])) { ?>
-      <div class="info alert alert-info">
-        Запись успешно сохранена!
-      </div>
-    <?php } ?>
+    <?php if (isset($success) && $success) {
+      Templator::successMessage();
+    } ?>
 
   <div id="comments">
-      <?php require_once __DIR__ . '/getComments.php'; ?>
+      <?php $commentsController->all(); ?>
   </div>
 
   <div id="form">
@@ -35,13 +39,7 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-      $(document).ready(function () {
-          $('.show').click(function () {
-              $('#wrapper').load('http://localhost/?page=' + $(this).attr('id'));
-          });
-      });
-  </script>
+  <script src="main.js"></script>
 
 </div>
 </body>

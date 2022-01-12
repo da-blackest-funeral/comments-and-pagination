@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 class Templator
 {
@@ -10,11 +10,11 @@ class Templator
     private static int $page = 1;
 
     // TODO разбить Templator и Paginator на два класса
+
     /**
      * @param array $commentData
      */
-    private static function showComment(array $commentData): void
-    { ?>
+    private static function showComment(array $commentData): void { ?>
       <div class="note">
         <p>
           <span class="date"><?= $commentData['updated_at'] ?></span>
@@ -25,16 +25,21 @@ class Templator
       </div>
     <?php }
 
+    public static function successMessage() { ?>
+      <div class="info alert alert-info">
+        Запись успешно сохранена!
+      </div>
+    <?php }
+
     /**
      * Метод, возвращающий записи только для текущей страницы
      * @param array $allComments
      * @return array
      */
-    private static function paginate(array $allComments): array
-    {
+    private static function paginate(array $allComments): array {
         if (!isset($_GET['page']) || (int)$_GET['page'] < 1) {
             self::$page = 1;
-            header("location:http://localhost/?page=1");
+            header("location:http://192.168.56.10/?page=1");
         } else {
             self::$page = (int)$_GET['page'];
         }
@@ -46,12 +51,12 @@ class Templator
         );
     }
     // TODO сделать запрос
+
     /**
      * Метод, показывающий все комментарии
      * @param array $allCComments
      */
-    public static function showAll(array $allCComments): void
-    {
+    public static function showAll(array $allCComments): void {
         /*
          * округление происходит таким образом,
          * что если количество записей кратно
@@ -65,7 +70,7 @@ class Templator
          * необходимо уменьшить $maxPage на единицу
         */
         if (count($allCComments) % self::$commentsPerPage == 0
-        || count($allCComments) % self::$commentsPerPage == 2) {
+            || count($allCComments) % self::$commentsPerPage == 2) {
             $maxPage--;
         }
 
@@ -77,7 +82,7 @@ class Templator
         */
         if (empty($paginated) && count($allCComments) > 0) {
             self::$page = $maxPage;
-            header("location:http://localhost/?page=" . self::$page - 1);
+            header("location:http://192.168.56.10/?page=" . self::$page - 1);
         }
         foreach ($paginated as $comment) {
             static::showComment($comment);

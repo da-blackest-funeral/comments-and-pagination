@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f88893fe-a8f2-42ca-98da-b7cc96fd07bf" name="Changes" comment="">
+    <list default="true" id="f88893fe-a8f2-42ca-98da-b7cc96fd07bf" name="Changes" comment="first step of refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getComments.php" beforeDir="false" afterPath="$PROJECT_DIR$/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templator.php" beforeDir="false" afterPath="$PROJECT_DIR$/Templator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +43,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Database" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -93,8 +97,17 @@
       <workItem from="1641933201975" duration="968000" />
       <workItem from="1641935238416" duration="22000" />
       <workItem from="1641984776151" duration="851000" />
-      <workItem from="1641985663214" duration="797000" />
+      <workItem from="1641985663214" duration="1095000" />
+      <workItem from="1641987010175" duration="1258000" />
     </task>
+    <task id="LOCAL-00001" summary="first step of refactoring">
+      <created>1641986730327</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641986730327</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,5 +124,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first step of refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="first step of refactoring" />
   </component>
 </project>
