@@ -7,7 +7,8 @@
         $success = $commentsController->make();
     }
 
-    if (!isset($_GET['ajax'])) {
+    // if request made with js, not needed to load header
+    if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
         require_once __DIR__ . '/Layouts/top.html';
     }
 ?>
