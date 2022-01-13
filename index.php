@@ -13,7 +13,7 @@
     }
 ?>
 
-  <h1>Гостевая книга</h1>
+    <h1 class="header">Гостевая книга</h1>
 
 <?php
     require_once __DIR__ . '/Layouts/button.html';

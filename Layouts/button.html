@@ -1,1 +1,6 @@
-<button class="show" id="<?= isset($_GET['page']) ? $_GET['page'] + 1 : '1'; ?>"> Показать следующие записи</button>
+<div class="btn__container">
+  <button class="show btn btn-info" id="1">Вернуться на 1 страницу</button>
+  <button class="show btn btn-info" id="<?= isset($_GET['page']) ? $_GET['page'] + 1 : '1'; ?>"> Показать следующие
+    записи
+  </button>
+</div>

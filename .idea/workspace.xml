@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f88893fe-a8f2-42ca-98da-b7cc96fd07bf" name="Changes" comment="directory structure refactoring">
+    <list default="true" id="f88893fe-a8f2-42ca-98da-b7cc96fd07bf" name="Changes" comment="fix: js injection defense, right loading template with js async request">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/CommentsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database/CommentsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layouts/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Layouts/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/button.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Layouts/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Layouts/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/Templator.php" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Templator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
@@ -103,7 +103,7 @@
       <workItem from="1641985663214" duration="1095000" />
       <workItem from="1641987010175" duration="5584000" />
       <workItem from="1642022416392" duration="2264000" />
-      <workItem from="1642068361197" duration="1675000" />
+      <workItem from="1642068361197" duration="3308000" />
     </task>
     <task id="LOCAL-00001" summary="first step of refactoring">
       <created>1641986730327</created>
@@ -133,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642024420616</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: js injection defense, right loading template with js async request">
+      <created>1642070195092</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642070195092</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +163,7 @@
     <MESSAGE value="code cleanup and refactoring" />
     <MESSAGE value="huge refactoring and fix" />
     <MESSAGE value="directory structure refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="directory structure refactoring" />
+    <MESSAGE value="fix: js injection defense, right loading template with js async request" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: js injection defense, right loading template with js async request" />
   </component>
 </project>

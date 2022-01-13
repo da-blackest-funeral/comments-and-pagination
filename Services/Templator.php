@@ -20,12 +20,10 @@
          * @param array $comment
          */
         private static function showComment(array $comment): void { ?>
-          <div class="note">
+          <div class="alert-info comment">
+            <span class="date"><?= $comment['updated_at'] ?></span>
             <p>
-              <span class="date"><?= $comment['updated_at'] ?></span>
-            </p>
-            <p>
-              <span class="date"><?= htmlspecialchars($comment['name']); ?></span>
+              <span class="name"><?= htmlspecialchars($comment['name']); ?></span>
             </p>
             <p>
                 <?= htmlspecialchars($comment['message']); ?>

@@ -9,11 +9,28 @@
 #wrapper > div{
 	margin-bottom: 15px;
 }
-#wrapper p{
-	margin-bottom: 5px;
+
+.header {
+	margin-left: auto;
+}
+
+.comment {
+	padding: 10px 10px 10px 10px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+
+.btn__container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn {
+	border-radius: 6px;
 }
 
 .date{
+	padding: 10px 10px 10px 10px;
 	font-weight: bold;
 }
 .name{
